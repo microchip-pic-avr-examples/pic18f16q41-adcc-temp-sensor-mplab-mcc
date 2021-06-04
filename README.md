@@ -117,7 +117,7 @@ For this project to run properly, the application will go through a series of st
       + ***ADC Threshold is enabled***
 
   ![ADCC Config 1](images/Picture4.PNG)
-  ![ADCC Config 2](images/Picture4.PNG)
+  ![ADCC Config 2](images/Picture5.PNG)
 
   + UART1
     + Software Settings:

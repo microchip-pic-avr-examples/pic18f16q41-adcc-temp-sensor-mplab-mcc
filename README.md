@@ -217,16 +217,3 @@ int main(void)
   ## Summary
 
   This application demonstrates how to set up an ADCC and utilize the Temperature Indicator Module to measure the device Temperature
-
-
-
-
-
-
-## Operation
-
-<!-- Explain how to operate the example. Depending on complexity, step-by-step instructions and/or tables and/or images can be used -->
-
-## Summary
-
-<!-- Summarize what the example has shown -->

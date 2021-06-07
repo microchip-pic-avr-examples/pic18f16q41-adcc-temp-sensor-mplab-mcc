@@ -32,16 +32,11 @@ Copyright (c) [2012-2020] Microchip Technology Inc.
     such restrictions will not apply to such third party software.
 */
 #include "mcc_generated_files/system/system.h"
-//Sets sampling channel of ADCC without starting conversion
+
 #define SetAcquisitionChannel(X) do { ADPCH = X; } while (0)
-
-int16_t gain;
-int16_t offset;
-
-//int24_t getTemperature(void)
-//{
-    
-//}
+//Sets sampling channel of ADCC without starting conversion
+    int16_t gain;
+    int16_t offset;
 
 int main(void)
 {
@@ -50,23 +45,21 @@ int main(void)
     gain = FLASH_ReadWord(DIA_TSHR1);  
     offset = FLASH_ReadWord(DIA_TSHR3);
     
-   INTERRUPT_GlobalInterruptEnable();
+    INTERRUPT_GlobalInterruptEnable();
+    uint16_t ADC_MEAS = 0;
+    int24_t temp_c = 0;
+    SetAcquisitionChannel(channel_Temp);
    
-   uint16_t ADC_MEAS = 0;
-   int24_t temp_c = 0;
-   SetAcquisitionChannel(channel_Temp);
-  
+   
    while(1)
-    {       
-ADC_MEAS = ADCC_GetConversionResult(); 
-temp_c = (int24_t) (ADC_MEAS) * gain;
-temp_c = temp_c / 256;
-temp_c = temp_c + offset;
-temp_c = temp_c / 10;
-printf("gain: %d \r\n " , gain);
-printf("offset: %d \r\n " , offset);
-printf("Temp Sensor Result %d \r\n", temp_c);
-asm ("SLEEP"); 
-asm ("NOP");
+    {    
+        asm ("SLEEP"); 
+        asm ("NOP");
+        ADC_MEAS = ADCC_GetConversionResult(); 
+        temp_c = (int24_t) (ADC_MEAS) * gain;
+        temp_c = temp_c / 256;
+        temp_c = temp_c + offset;
+        temp_c = temp_c / 10;
+        printf("Temp Sensor Result %d \r\n", temp_c);
    }
 }

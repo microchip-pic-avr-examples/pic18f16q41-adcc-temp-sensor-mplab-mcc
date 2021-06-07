@@ -62,12 +62,13 @@ Copyright (c) [2012-2020] Microchip Technology Inc.
 void SYSTEM_Initialize(void)
 {
     CLOCK_Initialize();
-    INTERRUPT_Initialize();
-    FVR_Initialize();
-    Timer2_Initialize();
     ADCC_Initialize();
     FLASH_Initialize();
-    PIN_MANAGER_Initialize();
     UART1_Initialize();
+    INTERRUPT_Initialize();
+    I2C1_Initialize();
+    Timer2_Initialize();
+    FVR_Initialize();
+    PIN_MANAGER_Initialize();
 }
 

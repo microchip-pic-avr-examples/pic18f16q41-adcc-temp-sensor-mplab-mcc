@@ -1,9 +1,8 @@
 
 [![MCHP](images/microchip.png)](https://www.microchip.com)
 
-# ADCC Temperature Sensor
-In this example, the ADCC will be configured to be used with the Temperature Indicator Module to measure the PIC18F16Q41 device temperature at short intervals.  
-
+# Using the Temperature Indicator on PIC18F16Q41
+In this example, the ADCC will be configured to sample the Temperature Indicator Module to measure the PIC18F16Q41 device temperature periodically.
 ## Related Documentation
 
 * [PIC18F16Q41 Datasheet](https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F06-16Q41-DataSheet-40002214C.pdf)
@@ -14,9 +13,10 @@ In this example, the ADCC will be configured to be used with the Temperature Ind
 
 ## Software Used
 
-- MPLAB� X IDE 5.45.0 or newer [(MPLAB� X IDE 5.45)](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-x-ide?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_MPAE_Examples&utm_content=pic18f16q41-adcc-temp-sensor-mplab-mcc-github)
-- MPLAB� XC8 2.31.0 or newer compiler [(MPLAB� XC8 2.31)](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-xc-compilers?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_MPAE_Examples&utm_content=pic18f16q41-adcc-temp-sensor-mplab-mcc-github)
+- MPLAB® X IDE 5.45.0 or newer [(MPLAB® X IDE 5.45)](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-x-ide?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_MPAE_Examples&utm_content=pic18f16q41-adcc-temp-sensor-mplab-mcc-github)
+- MPLAB® XC8 2.31.0 or newer compiler [(MPLAB® XC8 2.31)](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-xc-compilers?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_MPAE_Examples&utm_content=pic18f16q41-adcc-temp-sensor-mplab-mcc-github)
 * [MPLAB Code Configurator (MCC)](https://www.microchip.com/mplab/mplab-code-configurator)
+  * Melody Library v1.37.22
 * [MPLAB Data Visualizer Plugin](https://www.microchip.com/en-us/development-tools-tools-and-software/embedded-software-center/mplab-data-visualizer) or other serial terminal
 
 
@@ -132,7 +132,7 @@ For this project to run properly, the application will go through a series of st
 
 
 
-  + ***In order for the Temperature calculation to be made, gain and offset need to be read from the DIA. By configuring the memory peripheral this allows access to read those values.***
+  + ***In order for the Temperature calculation to be made, gain and offset need to be read from the Device Information Area (DIA). By configuring the memory peripheral this allows access to read those values.***
   + Memory
       + ***Custom Name:*** FLASH
       + ***Add Data EE Routines:*** Enabled
@@ -208,7 +208,7 @@ int main(void)
 
   ![COM PORT Configuration](images/Picture14.PNG)
 
-  + If everything is setup correctly, then the data Visualizer should start displaying the device temperature periodically
+  + If everything is setup correctly, then the Data Visualizer should start displaying the device temperature periodically.
 
   ![Terminal Emulator Results](images/Picture15.PNG)
 
@@ -216,4 +216,4 @@ int main(void)
 
   ## Summary
 
-  This application demonstrates how to set up an ADCC and utilize the Temperature Indicator Module to measure the device Temperature
+  This application demonstrates how to set up an ADCC and utilize the Temperature Indicator Module to measure the device temperature

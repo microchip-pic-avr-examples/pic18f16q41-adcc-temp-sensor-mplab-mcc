@@ -49,7 +49,7 @@ In this example, the ADCC will be configured to sample the Temperature Indicator
 + Set Configuration Bits
   + Disable "External Oscillator Mode Selection"
   + Set "Power-up Default Value for COSC" to "HFINTOSC with HFFRQ = 64MHz and CDIV = 1:1"
-  + Ensure that "WDT Operating Mode" is set to "WDT Disabled; SWDTEN is ignored"**Step #3: Adding Timer, CLC and UART Peripheral**
+  + Ensure that "WDT Operating Mode" is set to "WDT Disabled; SWDTEN is ignored"
 
 ![Configuration Bits](images/Picture2.PNG)
 

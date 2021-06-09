@@ -60,6 +60,6 @@ int main(void)
         temp_c = temp_c / 256;
         temp_c = temp_c + offset;
         temp_c = temp_c / 10;
-        printf("Temp Sensor Result %d \r\n", temp_c);
+        printf("Device Temperature: %dC \r\n", temp_c);
    }
 }

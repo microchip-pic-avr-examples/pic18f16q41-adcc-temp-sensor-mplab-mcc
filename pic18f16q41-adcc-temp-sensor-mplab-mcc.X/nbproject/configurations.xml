@@ -732,6 +732,8 @@
         <property key="memories.programmemory.ranges" value="0-ffff"/>
         <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Users/C63402/Desktop/pic18f16q41-adcc-temp-sensor-mplab-mcc-feature-MPAE-12489@b8a47581286/pic18f16q41-adcc-temp-sensor-mplab-mcc.X/debug/free/pic18f16q41-adcc-temp-sensor-mplab-mcc_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"

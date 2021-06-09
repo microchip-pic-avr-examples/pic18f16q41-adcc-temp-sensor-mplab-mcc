@@ -83,9 +83,9 @@ For this project to run properly, the application will go through a series of st
       + ***Prescaler:*** 1:8
       + ***Postscaler:*** 1:12
     + Timer Period(s)
-      + ***Time Period (s):*** 0.6
+      + ***Time Period (s):*** 0.5
 
-![TMR2 Config](images/Picture8.PNG)
+![TMR2 Config](images/Picture16.1.PNG)
 
 
   + FVR
@@ -184,7 +184,7 @@ int main(void)
         temp_c = temp_c / 256;
         temp_c = temp_c + offset;
         temp_c = temp_c / 10;
-        printf("Temp Sensor Result %d \r\n", temp_c);
+        printf("Device Temperature: %dC \r\n", temp_c);
    }
 }
 
@@ -208,9 +208,10 @@ int main(void)
 
   ![COM PORT Configuration](images/Picture14.PNG)
 
-  + If everything is setup correctly, then the Data Visualizer should start displaying the device temperature apprxiently once every half a second.
+  + If everything is setup correctly, then the Data Visualizer should start displaying the device temperature every half a second.
+  + If you cover or touch the die on the device, you will notice the temperature start to slightly increase
 
-  ![Terminal Emulator Results](images/Picture15.PNG)
+  ![Terminal Emulator Results](images/Picture16.2.PNG)
 
 
 

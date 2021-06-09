@@ -208,7 +208,7 @@ int main(void)
 
   ![COM PORT Configuration](images/Picture14.PNG)
 
-  + If everything is setup correctly, then the Data Visualizer should start displaying the device temperature periodically.
+  + If everything is setup correctly, then the Data Visualizer should start displaying the device temperature apprxiently once every half a second.
 
   ![Terminal Emulator Results](images/Picture15.PNG)
 

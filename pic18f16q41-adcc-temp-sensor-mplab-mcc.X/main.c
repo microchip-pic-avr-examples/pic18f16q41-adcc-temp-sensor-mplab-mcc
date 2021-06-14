@@ -35,12 +35,13 @@ Copyright (c) [2012-2020] Microchip Technology Inc.
 
 #define SetAcquisitionChannel(X) do { ADPCH = X; } while (0)
 //Sets sampling channel of ADCC without starting conversion
-    int16_t gain;
-    int16_t offset;
 
 int main(void)
 {
     SYSTEM_Initialize();
+    
+    int16_t gain;
+    int16_t offset;
     
     gain = FLASH_ReadWord(DIA_TSHR1);  
     offset = FLASH_ReadWord(DIA_TSHR3);

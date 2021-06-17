@@ -2,27 +2,27 @@
 [![MCHP](images/microchip.png)](https://www.microchip.com)
 
 # Using the Temperature Indicator on PIC18F16Q41
-In this example, the ADCC will be configured to sample the Temperature Indicator Module to measure the PIC18F16Q41 device temperature periodically.
+In this example, the ADCC will be configured to sample the Temperature Indicator Module in order to measure the device temperature of a PIC18F16Q41 microcontroller.
 ## Related Documentation
 
 * [PIC18F16Q41 Datasheet](https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F06-16Q41-DataSheet-40002214C.pdf)
 
-* [PIC18F16Q41 Device Page](https://www.microchip.com/wwwproducts/en/PIC18F16Q41)
+* [PIC18F16Q41 Device Page](https://www.microchip.com/wwwproducts/en/PIC18F16Q41?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_pic18q41&utm_content=pic18f16q41-adcc-temp-sensor-mplab-mcc-github)
 
 * [PIC18F16Q41 Curiosity Nano Users Guide](https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F16Q41-Curiosity-Nano-Hardware-User-Guide-DS50003048A.pdf)
 
 ## Software Used
 
-- MPLAB® X IDE 5.45.0 or newer [(MPLAB® X IDE 5.45)](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-x-ide?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_MPAE_Examples&utm_content=pic18f16q41-adcc-temp-sensor-mplab-mcc-github)
-- MPLAB® XC8 2.31.0 or newer compiler [(MPLAB® XC8 2.31)](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-xc-compilers?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_MPAE_Examples&utm_content=pic18f16q41-adcc-temp-sensor-mplab-mcc-github)
-* [MPLAB Code Configurator (MCC)](https://www.microchip.com/mplab/mplab-code-configurator)
-  * Melody Library v1.37.22
-* [MPLAB Data Visualizer Plugin](https://www.microchip.com/en-us/development-tools-tools-and-software/embedded-software-center/mplab-data-visualizer) or other serial terminal
+- MPLAB® X IDE 5.45.0 or newer [(MPLAB X IDE 5.45)](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-x-ide?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_pic18q41&utm_content=pic18f16q41-adcc-temp-sensor-mplab-mcc-github)
+- MPLAB XC8 2.31.0 or newer compiler [(MPLAB XC8 2.31)](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-xc-compilers?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_pic18q41&utm_content=pic18f16q41-adcc-temp-sensor-mplab-mcc-github)
+* [MPLAB Code Configurator (MCC)](https://www.microchip.com/en-us/development-tools-tools-and-software/embedded-software-center/mplab-code-configurator?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_pic18q41&utm_content=pic18f16q41-adcc-temp-sensor-mplab-mcc-github)
+  * Melody Library v1.37.22 or newer
+* [MPLAB Data Visualizer Plugin](https://www.microchip.com/en-us/development-tools-tools-and-software/embedded-software-center/mplab-data-visualizer?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_pic18q41&utm_content=pic18f16q41-adcc-temp-sensor-mplab-mcc-github) or other serial terminal
 
 
 ## Hardware Used
 
-* [PIC18F16Q41 Product Information](https://www.microchip.com/wwwproducts/en/PIC18F16Q41)
+* [PIC18F16Q41 Curiosity Nano](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV26Q64A?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_pic18q41&utm_content=pic18f16q41-adcc-temp-sensor-mplab-mcc-github)
 
 ## Setup
 
@@ -56,8 +56,8 @@ In this example, the ADCC will be configured to sample the Temperature Indicator
 
 **Step #3: Adding ADCC, FVR, Memory, Timer, and UART peripherals**
 
-For this project to run properly, the application will go through a series of steps in order to read back an accurate/precise device temperature.
-  - These steps are: ADCC is set up to run periodically &rarr; Device is put to sleep &rarr; temp sensor is measured &rarr; Wake-Up device on interrupt &rarr; Convert result to Temperature &rarr; Print result using UART.
+For this project to work properly, the application goes through a specific series of steps to minimize noise in the measurement.
+  - These steps are: ADCC is set up to run periodically from hardware trigger &rarr; Device is put to sleep &rarr; Hardware trigger activates &rarr; Temperature Sensor is measured multiple times and averaged &rarr; Microcontroller is woken up after average is computed &rarr; Result is converted to temperature &rarr; Print results using UART.
 
   + In Device Resources:
       + Drivers &rarr; ADCC &rarr; ADCC
@@ -71,7 +71,7 @@ For this project to run properly, the application will go through a series of st
 
   **Once the peripherals are added, modify the peripherals:**
 
-  Please refer to the Temperature Indicator Module on the [PIC18F16Q41 Datasheet](https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F06-16Q41-DataSheet-40002214C.pdf) when configuring these peripherals
+  Please refer to the Temperature Indicator Module on the [PIC18F16Q41 Datasheet](https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F06-16Q41-DataSheet-40002214C.pdf) when configuring these peripherals.
 
 
   + TMR2
@@ -211,7 +211,7 @@ int main(void)
   ![COM PORT Configuration](images/Picture14.PNG)
 
   + If everything is setup correctly, then the Data Visualizer should start displaying the device temperature every half a second.
-  + If you cover or touch the die on the device, you will notice the temperature start to slightly increase
+  + If you cover or touch the die on the device, you will notice the temperature start to increase.
 
   ![Terminal Emulator Results](images/Picture16.2.PNG)
 
@@ -219,4 +219,4 @@ int main(void)
 
   ## Summary
 
-  This application demonstrates how to set up an ADCC and utilize the Temperature Indicator Module to measure the device temperature
+  This application demonstrates how to set up an ADCC and utilize the Temperature Indicator Module to measure the device temperature.

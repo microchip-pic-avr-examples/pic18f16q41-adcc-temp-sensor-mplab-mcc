@@ -2,9 +2,9 @@
     "metaDataVersion": "1.0.0",
     "category": "com.microchip.ide.project",
     "content": {
-        "metaDataVersion": "1.0.0",
+        "metaDataVersion": "1.1.0",
         "name": "com.microchip.mcu8.mplabx.project.pic18f16q41-adcc-temp-sensor-mplab-mcc",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "displayName": "Using the Temperature Inidcator on PIC18F16Q41",
         "projectName": "pic18f16q41-adcc-temp-sensor-mplab-mcc",
         "shortDescription": "This example will show how to use the Temperature Indicator Module and configure an ADCC to measure the device temperature on a PIC18F16Q41",

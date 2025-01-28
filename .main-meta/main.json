@@ -4,18 +4,18 @@
     "content": {
         "metaDataVersion": "1.1.0",
         "name": "com.microchip.mcu8.mplabx.project.pic18f16q41-adcc-temp-sensor-mplab-mcc",
-        "version": "1.0.1",
+        "version": "1.1.0",
         "displayName": "Using the Temperature Inidcator on PIC18F16Q41",
         "projectName": "pic18f16q41-adcc-temp-sensor-mplab-mcc",
         "shortDescription": "This example will show how to use the Temperature Indicator Module and configure an ADCC to measure the device temperature on a PIC18F16Q41",
         "ide": {
             "name": "MPLAB X",
-            "semverRange": ">=5.45.0"
+            "semverRange": ">=6.2.0"
         },
         "compiler": [
             {
                 "name": "XC8",
-                "semverRange": "^2.31.0"
+                "semverRange": "^3.0.0"
             }
         ],
         "dfp": {
@@ -24,7 +24,7 @@
         },
         "configurator": {
             "name": "MCC",
-            "semverRange": ">=4.1.0"
+            "semverRange": ">=5.4.1"
         },
         "device": {
             "metaDataVersion": "1.0.0",

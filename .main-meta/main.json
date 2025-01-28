@@ -56,7 +56,7 @@
        ]
         ],
         "peripherals": [
-          "UART1","TMR2","ADCC","FVR","Memory"
+          "UART","TMR2","ADCC","FVR","Memory"
         ],
         "keywords": [
           "MCC",
